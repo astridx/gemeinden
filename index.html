@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="de">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Eine OSM Karte mit Leaflet</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+              integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+              crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+                integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+        crossorigin=""></script>
+        <script src="sik/Gemeinden.js"></script>
+        <script src="LeafletLayerGemeinden.js"></script>
+    </head>
+    <body>
+        <div style="height: 700px;" id="mapid"></div>
+        <script>
+            var map = L.map('mapid', {doubleClickZoom: false}).setView([52.3, 0.191838], 18);
+
+            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png')
+                    .addTo(map);
+
+            //L.leafletLayerGemeinden().addTo(map);
+            L.leafletLayerGemeinden({
+                minZoomLabelVisible: 10,
+                weight: 2,
+                limit_display: "1",
+                property_name: "GN"
+            }
+            ).addTo(map);
+        </script>
+    </body>
+</html>
