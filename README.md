@@ -9,7 +9,8 @@ Karte anzuzeigen.
 
 # Quickstart
 
-1. Voraussetzung sind zwei JavaScript-Datei. 
+## Voraussetzung sind zwei JavaScript-Datei. 
+
 Zum einen ist dies eine Datei, die 
 die Gemeindedaten in der Form 
 ```
@@ -21,9 +22,11 @@ var gemeinden = {
 { "type": "Feature", "properties": { ... },
 ...
 ```
-enthält 
+enthält.  
+
 Die zweite Datei ist die Datei `LeafletLayerGemeinden.js` diese Repositories.
-2. Binden Sie die JavaScript-Dateien in Ihre HTML-Seite ein:
+
+## Binden Sie die JavaScript-Dateien in Ihre HTML-Seite ein:
 
 ```
 ...
@@ -32,9 +35,7 @@ Die zweite Datei ist die Datei `LeafletLayerGemeinden.js` diese Repositories.
 ...
 ```
 
-3. Initialize the plugin
-You can initialize the plugin in the standard Leaflet way adding it to a map instance. 
-To add the basic to your map instance, use this Javascript code. 
+## Initialisieren Sie das Plugin
 Sie können das Plugin auf die standardmäßige Art und Weise in Leaflet initialisieren, 
 indem Sie es einer Karteninstanz hinzufügen.
 Um die Standardeinstellungen zur Karteninstanz hinzuzufügen, 
@@ -53,7 +54,7 @@ verwenden Sie diesen Javascript-Code.
 ...
 ```
 
-If you want to customize the plugin, you can use the options 
+Wenn Sie das Plugin anpassen möchten, können Sie die die folgenden Optionen verwenden
 - `minZoomLabelVisible`
 - `weight`
 - `limit_display`
@@ -82,15 +83,14 @@ If you want to customize the plugin, you can use the options
 
 # Options
 
-### Options
-You can pass a number of options to the plugin to control various settings.
+Sie können eine Reihe von Optionen an das Plugin übergeben, um verschiedene Einstellungen zu steuern.
 
 | Option        | Type         | Default      | Description   |
 | ------------- |--------------|--------------|---------------|
-| minZoomLabelVisible | number | 10 | Determines the lowest zoom level at which the titles are to be displayed. |
-| weight | 2 | number | Position if the control | Stroke width in pixels. |
-| limit_display | string | '0' | Restricts the map view to the given bounds if set to '1'|
-| property_name | string | 'GN' | Name of the property in the GeoJSN file. |
+| minZoomLabelVisible | number | 10 | Legt die niedrigste Zoomstufe fest, bei der die Titel angezeigt werden sollen. |
+| weight | 2 | number | Position if the control | Strichbreite in Pixel. |
+| limit_display | string | '0' | Beschränkt die Kartenansicht auf die angegebenen Grenzen, wenn "1" festgelegt ist. |
+| property_name | string | 'GN' | Name der Eigenschaft (property) in der GeoJSON-Datei. |
 
 
 
@@ -99,15 +99,14 @@ You can pass a number of options to the plugin to control various settings.
 
 <details>
   <summary>Englisch/English</summary>
-Layer-Plugin für die JavaScript-Bibliothek Leaflet, welches es ermöglicht 
-GeoJSON Grenzen von Gemeinden einzulesen und diese mit Namen auf der 
-Karte anzuzeigen.
+Layer plug-in for the JavaScript library Leaflet, which makes it possible to read 
+Borders of communities from a GeoJSON file and show these by name on the Map.
 
 # Quickstart
 
-1. Voraussetzung sind zwei JavaScript-Datei. 
-Zum einen ist dies eine Datei, die 
-die Gemeindedaten in der Form 
+## Voraussetzung sind zwei JavaScript-Datei. 
+For one, this is a file that
+contains the community data in the form
 ```
 var gemeinden = {
 "type": "FeatureCollection",
@@ -116,10 +115,10 @@ var gemeinden = {
 "features": [
 { "type": "Feature", "properties": { ... },
 ...
-```
-enthält 
-Die zweite Datei ist die Datei `LeafletLayerGemeinden.js` diese Repositories.
-2. Binden Sie die JavaScript-Dateien in Ihre HTML-Seite ein:
+``` 
+The second file ist the file `LeafletLayerGemeinden.js` from this repository.
+
+## Include the JavaScript files in your HTML page:
 
 ```
 ...
@@ -186,7 +185,7 @@ You can pass a number of options to the plugin to control various settings.
 | minZoomLabelVisible | number | 10 | Determines the lowest zoom level at which the titles are to be displayed. |
 | weight | 2 | number | Position if the control | Stroke width in pixels. |
 | limit_display | string | '0' | Restricts the map view to the given bounds if set to '1'|
-| property_name | string | 'GN' | Name of the property in the GeoJSN file. |
+| property_name | string | 'GN' | Name of the property in the GeoJSON file. |
 
 
 </details>
