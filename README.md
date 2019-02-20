@@ -89,9 +89,9 @@ Sie können eine Reihe von Optionen an das Plugin übergeben, um verschiedene Ei
 
 | Option        | Type         | Default      | Description   |
 | ------------- |--------------|--------------|---------------|
-| minZoomLabelVisible | number | 10 | Legt die niedrigste Zoomstufe fest, bei der die Titel angezeigt werden sollen. |
-| maxZoomLabelVisible | number | 15 | Legt die höchste Zoomstufe fest, bei der die Titel angezeigt werden sollen. |
-| weight | 2 | number | Position if the control | Strichbreite in Pixel. |
+| minZoomLabelVisible | number | 10 | Legt die niedrigste Zoom-Stufe fest, bei der die Titel angezeigt werden sollen. |
+| maxZoomLabelVisible | number | 15 | Legt die höchste Zoom-Stufe fest, bei der die Titel angezeigt werden sollen. |
+| weight | 2 | number | Strichbreite in Pixel. |
 | limit_display | string | '0' | Beschränkt die Kartenansicht auf die angegebenen Grenzen, wenn "1" festgelegt ist. |
 | property_name | string | 'GN' | Name der Eigenschaft (property) in der GeoJSON-Datei. |
 
@@ -188,7 +188,7 @@ You can pass a number of options to the plugin to control various settings.
 | ------------- |--------------|--------------|---------------|
 | minZoomLabelVisible | number | 10 | Determines the lowest zoom level at which the titles are to be displayed. |
 | maxZoomLabelVisible | number | 15 | Determines the hightest zoom level at which the titles are to be displayed. |
-| weight | 2 | number | Position if the control | Stroke width in pixels. |
+| weight | 2 | number | Stroke width in pixels. |
 | limit_display | string | '0' | Restricts the map view to the given bounds if set to '1'|
 | property_name | string | 'GN' | Name of the property in the GeoJSON file. |
 
