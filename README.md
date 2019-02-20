@@ -16,8 +16,7 @@ die Gemeindedaten in der Form
 ```
 var gemeinden = {
 "type": "FeatureCollection",
-"name": "Gemeinden",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+...
 "features": [
 { "type": "Feature", "properties": { ... },
 ...
@@ -91,7 +90,7 @@ Sie können eine Reihe von Optionen an das Plugin übergeben, um verschiedene Ei
 | ------------- |--------------|--------------|---------------|
 | minZoomLabelVisible | number | 10 | Legt die niedrigste Zoom-Stufe fest, bei der die Titel angezeigt werden sollen. |
 | maxZoomLabelVisible | number | 15 | Legt die höchste Zoom-Stufe fest, bei der die Titel angezeigt werden sollen. |
-| weight | 2 | number | Strichbreite in Pixel. |
+| weight | number | 2 | Strichbreite in Pixel. |
 | limit_display | string | '0' | Beschränkt die Kartenansicht auf die angegebenen Grenzen, wenn "1" festgelegt ist. |
 | property_name | string | 'GN' | Name der Eigenschaft (property) in der GeoJSON-Datei. |
 
@@ -113,8 +112,7 @@ contains the community data in the form
 ```
 var gemeinden = {
 "type": "FeatureCollection",
-"name": "Gemeinden",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+...
 "features": [
 { "type": "Feature", "properties": { ... },
 ...
@@ -188,7 +186,7 @@ You can pass a number of options to the plugin to control various settings.
 | ------------- |--------------|--------------|---------------|
 | minZoomLabelVisible | number | 10 | Determines the lowest zoom level at which the titles are to be displayed. |
 | maxZoomLabelVisible | number | 15 | Determines the hightest zoom level at which the titles are to be displayed. |
-| weight | 2 | number | Stroke width in pixels. |
+| weight | number | 2 | Stroke width in pixels. |
 | limit_display | string | '0' | Restricts the map view to the given bounds if set to '1'|
 | property_name | string | 'GN' | Name of the property in the GeoJSON file. |
 
