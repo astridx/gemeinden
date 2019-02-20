@@ -39,7 +39,7 @@ Die zweite Datei ist die Datei `LeafletLayerGemeinden.js` diese Repositories.
 Sie können das Plugin auf die standardmäßige Art und Weise in Leaflet initialisieren, 
 indem Sie es einer Karteninstanz hinzufügen.
 Um die Standardeinstellungen zur Karteninstanz hinzuzufügen, 
-verwenden Sie diesen Javascript-Code.
+verwenden Sie den folgenden Javascript-Code.
 
 ```
 ...
@@ -54,8 +54,9 @@ verwenden Sie diesen Javascript-Code.
 ...
 ```
 
-Wenn Sie das Plugin anpassen möchten, können Sie die die folgenden Optionen verwenden
+Wenn Sie das Plugin anpassen möchten, können Sie die folgenden Optionen verwenden
 - `minZoomLabelVisible`
+- `maxZoomLabelVisible`
 - `weight`
 - `limit_display`
 - `property_name`
@@ -70,6 +71,7 @@ Wenn Sie das Plugin anpassen möchten, können Sie die die folgenden Optionen ve
 
     L.leafletLayerGemeinden({
         minZoomLabelVisible: 10,
+        maxZoomLabelVisible: 15,
         weight: 2,
         limit_display: "1",
         property_name: "destatis.zip"
@@ -88,6 +90,7 @@ Sie können eine Reihe von Optionen an das Plugin übergeben, um verschiedene Ei
 | Option        | Type         | Default      | Description   |
 | ------------- |--------------|--------------|---------------|
 | minZoomLabelVisible | number | 10 | Legt die niedrigste Zoomstufe fest, bei der die Titel angezeigt werden sollen. |
+| maxZoomLabelVisible | number | 15 | Legt die höchste Zoomstufe fest, bei der die Titel angezeigt werden sollen. |
 | weight | 2 | number | Position if the control | Strichbreite in Pixel. |
 | limit_display | string | '0' | Beschränkt die Kartenansicht auf die angegebenen Grenzen, wenn "1" festgelegt ist. |
 | property_name | string | 'GN' | Name der Eigenschaft (property) in der GeoJSON-Datei. |
@@ -150,6 +153,7 @@ verwenden Sie diesen Javascript-Code.
 
 If you want to customize the plugin, you can use the options 
 - `minZoomLabelVisible`
+- `maxZoomLabelVisible`
 - `weight`
 - `limit_display`
 - `property_name`
@@ -183,6 +187,7 @@ You can pass a number of options to the plugin to control various settings.
 | Option        | Type         | Default      | Description   |
 | ------------- |--------------|--------------|---------------|
 | minZoomLabelVisible | number | 10 | Determines the lowest zoom level at which the titles are to be displayed. |
+| maxZoomLabelVisible | number | 15 | Determines the hightest zoom level at which the titles are to be displayed. |
 | weight | 2 | number | Position if the control | Stroke width in pixels. |
 | limit_display | string | '0' | Restricts the map view to the given bounds if set to '1'|
 | property_name | string | 'GN' | Name of the property in the GeoJSON file. |

@@ -9,6 +9,12 @@ L.LeafletLayerGemeinden = L.Layer.extend({
             } else {
                 this._minZoomLabelVisible = 10;
             }
+            if (options.maxZoomLabelVisible)
+            {
+                this._maxZoomLabelVisible = options.maxZoomLabelVisible;
+            } else {
+                this._maxZoomLabelVisible = 15;
+            }
             if (options.weight)
             {
                 this._weight = options.weight;
@@ -29,6 +35,7 @@ L.LeafletLayerGemeinden = L.Layer.extend({
             }
         } else {
             this._minZoomLabelVisible = 10;
+            this._maxZoomLabelVisible = 15;
             this._weight = 2;
             this._limit_display = "0";
             this._property_name = "GN";
@@ -69,33 +76,31 @@ L.LeafletLayerGemeinden = L.Layer.extend({
 
     _zoomend: function () {
         if (typeof this._geoJsonLayer !== 'undefined') {
-
-            if (this._map.getZoom() < this._minZoomLabelVisible) {
+            if (this._map.getZoom() < this._minZoomLabelVisible || this._map.getZoom() > this._maxZoomLabelVisible) {
                 this._geoJsonLayer.eachLayer(function (layer) {
                     if (layer.getTooltip()) {
                         layer.unbindTooltip();
                     }
                 })
             }
-
-            if (this._map.getZoom() >= this._minZoomLabelVisible) {
+            if (this._map.getZoom() >= this._minZoomLabelVisible && this._map.getZoom() <= this._maxZoomLabelVisible) {
                 var title = this._property_name.split('.');
                 this._geoJsonLayer.eachLayer(function (layer) {
                     if (!layer.getTooltip()) {
                         if (title.length === 1) {
-                            layer.bindTooltip("<span class='gemeindenTooltip'>" + JSON.stringify(layer.feature.properties[title]) + "</span>", {
+                            layer.bindTooltip("<span class='gemeindenTooltip'>" + JSON.stringify(layer.feature.properties[title]).replace(/^"(.*)"$/, '$1') + "</span>", {
                                 permanent: true,
                                 direction: "center"
                             }).openTooltip();
                         }
                         if (title.length === 2) {
-                            layer.bindTooltip("<span class='gemeindenTooltip'>" + JSON.stringify(layer.feature.properties[title[0]][title[1]]) + "</span>", {
+                            layer.bindTooltip("<span class='gemeindenTooltip'>" + JSON.stringify(layer.feature.properties[title[0]][title[1]]).replace(/^"(.*)"$/, '$1') + "</span>", {
                                 permanent: true,
                                 direction: "center"
                             }).openTooltip();
                         }
                         if (title.length === 3) {
-                            layer.bindTooltip("<span class='gemeindenTooltip'>" + JSON.stringify(layer.feature.properties[title[0]][title[1]][title[2]]) + "</span>", {
+                            layer.bindTooltip("<span class='gemeindenTooltip'>" + JSON.stringify(layer.feature.properties[title[0]][title[1]][title[2]]).replace(/^"(.*)"$/, '$1') + "</span>", {
                                 permanent: true,
                                 direction: "center"
                             }).openTooltip();
@@ -103,10 +108,10 @@ L.LeafletLayerGemeinden = L.Layer.extend({
                     }
                 });
 
-
                 // Passe die Schriftgröße an
                 this._fontSize = this._map.getZoom() * this._map.getZoom() / 10 * this._map.getZoom() / 10;
                 var elements = document.getElementsByClassName('gemeindenTooltip');
+
                 for (var i = 0; i < elements.length; i++) {
                     var element = elements[i];
                     element.style.fontSize = this._fontSize + "px";
